@@ -6,14 +6,14 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Oct 2025 14:28:14 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 14 Dec 2025 14:28:14 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>s</title>
-      <link>http://localhost:1313/posts/s/</link>
-      <pubDate>Wed, 15 Oct 2025 14:28:14 -0300</pubDate>
-      <guid>http://localhost:1313/posts/s/</guid>
-      <description>&lt;h1 id=&#34;why-the-new-typescript-compiler-is-a-port-not-a-rewrite&#34;&gt;Why the New TypeScript Compiler Is a Port, Not a Rewrite&lt;/h1&gt;&#xA;&lt;h2 id=&#34;a-simple-and-direct-explanation&#34;&gt;A simple and direct explanation&lt;/h2&gt;&#xA;&lt;p&gt;On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be &lt;strong&gt;ported to Go&lt;/strong&gt;.&#xA;The work had already started; the announcement just made it public.&lt;/p&gt;&#xA;&lt;p&gt;Since then, many people have asked:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why Go?&lt;/li&gt;&#xA;&lt;li&gt;Why call it a &lt;em&gt;port&lt;/em&gt; instead of a &lt;em&gt;rewrite&lt;/em&gt;?&lt;/li&gt;&#xA;&lt;li&gt;Why not Rust or C#?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Before starting the migration, the TypeScript team evaluated several native languages, including &lt;strong&gt;Rust&lt;/strong&gt; and &lt;strong&gt;C#&lt;/strong&gt;. In the end, &lt;strong&gt;Go stood out&lt;/strong&gt;, and here’s why.&lt;/p&gt;</description>
+      <title>Why the New TypeScript Compiler Is a Go Port</title>
+      <link>http://localhost:1313/posts/typescript-go-port/</link>
+      <pubDate>Sun, 14 Dec 2025 14:28:14 -0300</pubDate>
+      <guid>http://localhost:1313/posts/typescript-go-port/</guid>
+      <description>&lt;h2 id=&#34;why-the-new-typescript-compiler-is-a-go-port-not-a-x-language-rewrite&#34;&gt;Why the New TypeScript Compiler Is a Go Port, Not a &amp;lsquo;X&amp;rsquo; Language Rewrite&lt;/h2&gt;&#xA;&lt;h2 id=&#34;a-simple-and-direct-explanation&#34;&gt;A simple and direct explanation&lt;/h2&gt;&#xA;&lt;p&gt;On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be &lt;strong&gt;ported to Go&lt;/strong&gt;.&#xA;The work had already started; the announcement just made it public.&lt;/p&gt;&#xA;&lt;p&gt;Since then, many people have asked:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why Go?&lt;/li&gt;&#xA;&lt;li&gt;Why call it a &lt;em&gt;port&lt;/em&gt; instead of a &lt;em&gt;rewrite&lt;/em&gt;?&lt;/li&gt;&#xA;&lt;li&gt;Why not Rust or C# or my &amp;lsquo;X&amp;rsquo; language?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Before starting the migration, the TypeScript team evaluated several native languages, including &lt;strong&gt;Rust&lt;/strong&gt; and &lt;strong&gt;C#&lt;/strong&gt;. In the end, &lt;strong&gt;Go stood out&lt;/strong&gt;, and here’s why.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

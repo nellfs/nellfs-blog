@@ -24,7 +24,7 @@
 </div>
 
 <main>
-<h1 id="why-the-new-typescript-compiler-is-a-go-port-not-a-x-language-rewrite">Why the New TypeScript Compiler Is a Go Port, Not a &lsquo;X&rsquo; Language Rewrite</h1>
+<h2 id="why-the-new-typescript-compiler-is-a-go-port-not-a-x-language-rewrite">Why the New TypeScript Compiler Is a Go Port, Not a &lsquo;X&rsquo; Language Rewrite</h2>
 <h2 id="a-simple-and-direct-explanation">A simple and direct explanation</h2>
 <p>On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be <strong>ported to Go</strong>.
 The work had already started; the announcement just made it public.</p>
@@ -45,7 +45,8 @@ The work had already started; the announcement just made it public.</p>
 <li>Minimal abstraction overhead</li>
 </ul>
 <p>Because of this, many parts of the compiler can be ported in a very <strong>direct, almost 1-to-1 way</strong>: TypeScript functions become Go functions with similar structure and logic.</p>
-<p>You can clearly see this in the source code of both compilers, here a scanner function as an example:</p>
+<p>You can clearly see this in the source code of both compilers</p>
+<p>Here is an function from the scanner as an example:</p>
 <ul>
 <li>
 <p>TypeScript scanner:<br>
@@ -58,7 +59,7 @@ The work had already started; the announcement just made it public.</p>
 </ul>
 <p>The structure is very similar. This is what a <em>port</em> means.</p>
 <hr>
-<h2 id="why-not-your-x-language">Why not your &lsquo;X&rsquo; language?</h2>
+<h2 id="why-not-my-x-language">Why not my &lsquo;X&rsquo; language?</h2>
 <p>Your answer is probably explained in the sections &ldquo;Why not Rust&rdquo; and &ldquo;Why not or C#&rdquo; :).</p>
 <hr>
 <h2 id="why-not-rust">Why not Rust?</h2>
@@ -66,7 +67,7 @@ The work had already started; the announcement just made it public.</p>
 <p>To satisfy Rust’s compiler ownership and lifetime rules, the engineers would need to rethink many APIs and data flows. That would lead more refactoring, more divergence from the original Typescript code, and a longer development time.</p>
 <p>That’s closer to a <strong>rewrite</strong> than a port.</p>
 <hr>
-<h2 id="why-not-my-x-language">Why not my &lsquo;X&rsquo; language?</h2>
+<h2 id="why-not-c">Why not C#?</h2>
 <p>C# was considered, but there were practical issues:</p>
 <ul>
 <li>AOT compilation in C# is still relatively new</li>
@@ -77,12 +78,11 @@ The work had already started; the announcement just made it public.</p>
 <hr>
 <h2 id="business-and-performance-reasons">Business and performance reasons</h2>
 <p>Porting the compiler to Go is easier, faster and safer (from a business and maintenance perspective)</p>
-<p>And it brings real benefits.</p>
-<p>In some cases, the new TypeScript compiler is already <strong>up to 10× faster</strong>.
+<p>And it brings real benefits. In some cases, the new TypeScript compiler is already <strong>up to 10× faster</strong>.
 This comes from being able to fully take advantage of native execution and Go&rsquo;s multi-threaded concurrency model</p>
 <hr>
 <h2 id="in-short">In short</h2>
-<p>Go allowed the TypeScript team to keep the compiler’s design, move fast, reduce risk, and gain major performance improvements without rewriting everything from scratch.</p>
+<p>Go allowed the TypeScript team to keep the compiler’s design, move fast, reduce risk, and gain major performance improvements without rewriting everything from scratch, that&rsquo;s why Go was their pick.</p>
 
 </main>
 
