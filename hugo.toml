@@ -2,3 +2,7 @@ baseURL = "https://nellfs.com/"
 languageCode = "en-us"
 title = "Nellfs"
 theme = 'xmin'
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
