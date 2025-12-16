@@ -4,9 +4,6 @@ date = '2025-12-14T14:28:14-03:00'
 draft = true
 +++
 
-## Why the New TypeScript Compiler Is a Go Port, Not a 'X' Language Rewrite
-## A simple and direct explanation
-
 On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be **ported to Go**.
 The work had already started; the announcement just made it public.
 
@@ -41,7 +38,7 @@ Here is an function from the scanner as an example:
 - Go scanner:  
   https://github.com/microsoft/typescript-go/blob/6c175a0ad35e6bf0eca7dd3b5c622a5ab9e6fd35/internal/scanner/scanner.go#L1829C1-L1868C2
 
-The structure is very similar. This is what a *port* means.
+The structure is very similar. This is why the team chooses to call it a *port*.
 
 ---
 
