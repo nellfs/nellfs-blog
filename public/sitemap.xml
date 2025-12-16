@@ -2,17 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://nellfs.com/</loc>
     <lastmod>2025-12-14T14:28:14-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://nellfs.com/posts/</loc>
     <lastmod>2025-12-14T14:28:14-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/typescript-go-port/</loc>
-    <lastmod>2025-12-14T14:28:14-03:00</lastmod>
+    <loc>https://nellfs.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://nellfs.com/tags/</loc>
   </url>
 </urlset>
