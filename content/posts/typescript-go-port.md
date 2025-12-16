@@ -1,7 +1,7 @@
 +++
 title = 'Why the New TypeScript Compiler Is a Go Port'
 date = '2025-12-14T14:28:14-03:00'
-draft = true
+draft = false
 +++
 
 On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be **ported to Go**.
