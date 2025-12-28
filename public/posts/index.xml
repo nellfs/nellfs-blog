@@ -2,11 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Nellfs</title>
-    <link>https://nellfs.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Nellfs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://nellfs.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Dec 2025 14:41:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawing Graphics in the Terminal Using Go (Part 1)</title>
+      <link>http://localhost:1313/posts/2d-graphics-on-the-terminal-part-1/</link>
+      <pubDate>Sun, 28 Dec 2025 14:41:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/2d-graphics-on-the-terminal-part-1/</guid>
+      <description>&lt;p&gt;In this series of tutorials, we will focus on the basics of drawing graphics in the terminal. We’ll use Go, but the concepts can be transferred to almost any other language. We’ll start by creating a simple &lt;strong&gt;Canvas&lt;/strong&gt; and drawing a background on it. Then, we’ll explore how to draw multiple characters on the Canvas to create animations or more complex graphics.&lt;/p&gt;&#xA;&lt;p&gt;This is a very basic tutorial, but with these core concepts you can build things like games, text-based interfaces, data visualizations, and even character based 3D graphics in the terminal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Why the New TypeScript Compiler Is a Go Port</title>
+      <link>http://localhost:1313/posts/typescript-go-port/</link>
+      <pubDate>Sun, 14 Dec 2025 14:28:14 -0300</pubDate>
+      <guid>http://localhost:1313/posts/typescript-go-port/</guid>
+      <description>&lt;p&gt;On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be &lt;strong&gt;ported to Go&lt;/strong&gt;.&#xA;The work had already started; the announcement just made it public.&lt;/p&gt;&#xA;&lt;p&gt;Since then, many people have asked:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why Go?&lt;/li&gt;&#xA;&lt;li&gt;Why call it a &lt;em&gt;port&lt;/em&gt; instead of a &lt;em&gt;rewrite&lt;/em&gt;?&lt;/li&gt;&#xA;&lt;li&gt;Why not Rust or C# or my &amp;lsquo;X&amp;rsquo; language?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Before starting the migration, the TypeScript team evaluated several native languages, including &lt;strong&gt;Rust&lt;/strong&gt; and &lt;strong&gt;C#&lt;/strong&gt;. In the end, &lt;strong&gt;Go stood out&lt;/strong&gt;, and here’s why.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawing Graphics in the Terminal Using Go (Part 1) | Nellfs</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+    <h1><span class="title">Drawing Graphics in the Terminal Using Go (Part 1)</span></h1>
+     
+    <h2 class="date">2025/12/28</h2>
+    
+</div>
+
+<main><p>In this series of tutorials, we will focus on the basics of drawing graphics in the terminal. We’ll use Go, but the concepts can be transferred to almost any other language. We’ll start by creating a simple <strong>Canvas</strong> and drawing a background on it. Then, we’ll explore how to draw multiple characters on the Canvas to create animations or more complex graphics.</p>
+<p>This is a very basic tutorial, but with these core concepts you can build things like games, text-based interfaces, data visualizations, and even character based 3D graphics in the terminal.</p>
+<p>I hope that by the end of this series you’ll be able to create your own terminal-based applications and also understand how libraries like <a href="https://github.com/charmbracelet">Charm</a> work under the hood :).</p>
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="metadata"
+  style="max-width: 100%; height: auto; border-radius: 8px;"
+>
+  
+  <source src="/videos/happy-2026.webm" type="video/webm">
+  
+</video>
+
+<hr>
+<h2 id="the-canvas">The Canvas</h2>
+<p>First of all, we need to understand <em>what</em> we are drawing on. A <strong>Canvas</strong> is simply a place to draw graphics. In our case, it’s a grid of characters. You can think of it as a two-dimensional array where each cell holds a character.</p>
+<p><strong>Here is a canvas:</strong></p>
+<pre tabindex="0"><code>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+</code></pre><p>Sorry, this is an empty canvas, but we’ll fill it with characters soon!<br>
+For the sake of clarity, let’s fill this canvas with dots (<code>.</code>).</p>
+<p><strong>Visible Canvas:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>.......... // <span style="color:#ae81ff">10</span> dots long
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>// <span style="color:#ae81ff">5</span> dots high
+</span></span></code></pre></div><p>We can say this canvas is a 10x5 canvas, where the width is 10 and the height is 5</p>
+<p><strong>Dimensions:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#a6e22e">Width</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Height</span>: <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>We can represent this in Go as a canvas struct:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">canvas</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Width</span>      <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Height</span>     <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Background</span> <span style="color:#66d9ef">rune</span> <span style="color:#75715e">// out dots (`.`)</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now we can create a simple constructor function to make sure all fields are set correctly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewCanvas</span>(<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">background</span> <span style="color:#66d9ef">rune</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">canvas</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">canvas</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Width</span>:      <span style="color:#a6e22e">width</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Height</span>:     <span style="color:#a6e22e">height</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Background</span>: <span style="color:#a6e22e">background</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="creating-the-canvas">Creating the Canvas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/nellfs/go2d/internal/screen&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// I&#39;ve created the screen package to hold the canvas.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// You can organize the code as you want.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">canvas</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">NewCanvas</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;.&#39;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nice, we now have a canvas!
+But we can&rsquo;t see it on screen. For that we need a <strong>Render</strong> function</p>
+<hr>
+<h2 id="render">Render</h2>
+<p>In the context of our canvas, a render function is responsible for displaying the canvas on the screen.</p>
+<ul>
+<li>Render = take data/state -&gt; draw pixels (or shapes, text, colors) on the screen
+(in our case, text characters)</li>
+</ul>
+<h3 id="lets-implement-our-simple-render-function">Let&rsquo;s implement our simple Render function</h3>
+<p>We need to loop over the canvas width and height. For every character (all dots, for now), we print it to the screen. After each row, we jump to the next line.</p>
+<p>The position of each character is defined by:</p>
+<ul>
+<li>the column index (x)</li>
+<li>the row index (y)</li>
+</ul>
+<p>I’ll call them <em>xc</em> and <em>yc</em> (“x coordinate” and “y coordinate”).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">canvas</span>) <span style="color:#a6e22e">Render</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">yc</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">yc</span> &lt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Height</span>; <span style="color:#a6e22e">yc</span><span style="color:#f92672">++</span> { <span style="color:#75715e">// Y axis (rows)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">xc</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">xc</span> &lt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Width</span>; <span style="color:#a6e22e">xc</span><span style="color:#f92672">++</span> { <span style="color:#75715e">// X axis (columns)</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(string(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Background</span>)) <span style="color:#75715e">// draw the background character</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>() <span style="color:#75715e">// move to the next line after each row</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="rendering-the-canvas">Rendering the Canvas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/nellfs/go2d/internal/screen&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">canvas</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">NewCanvas</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;.&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">Render</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we run this program, we can finally see the canvas in our terminal emulator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nellfs@desktop:~/work/go2d&gt; go run cmd/main.go
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>..........
+</span></span><span style="display:flex;"><span>nellfs@desktop:~/work/go2d&gt;
+</span></span></code></pre></div><p>-<strong><em>YAAYYYYY! WE DID IT!!</em></strong></p>
+<hr>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>We’ve created a canvas and rendered it on the screen.
+In the next part, we’ll learn how to draw shapes on this canvas.</p>
+</main>
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

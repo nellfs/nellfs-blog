@@ -1,0 +1,12 @@
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="metadata"
+  style="max-width: 100%; height: auto; border-radius: 8px;"
+>
+  {{ if .Get "webm" }}
+  <source src="{{ .Get "webm" }}" type="video/webm">
+  {{ end }}
+</video>
