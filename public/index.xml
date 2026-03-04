@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/posts/typescript-go-port/</guid>
       <description>&lt;p&gt;On March 11th, 2025, Anders Hejlsberg announced that the new TypeScript compiler would be &lt;strong&gt;ported to Go&lt;/strong&gt;.&#xA;The work had already started; the announcement just made it public.&lt;/p&gt;&#xA;&lt;p&gt;Since then, many people have asked:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why Go?&lt;/li&gt;&#xA;&lt;li&gt;Why call it a &lt;em&gt;port&lt;/em&gt; instead of a &lt;em&gt;rewrite&lt;/em&gt;?&lt;/li&gt;&#xA;&lt;li&gt;Why not Rust or C# or my &amp;lsquo;X&amp;rsquo; language?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Before starting the migration, the TypeScript team evaluated several native languages, including &lt;strong&gt;Rust&lt;/strong&gt; and &lt;strong&gt;C#&lt;/strong&gt;. In the end, &lt;strong&gt;Go stood out&lt;/strong&gt;, and here’s why.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;h1 id=&#34;heron-ximenes&#34;&gt;Heron Ximenes&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Software Developer&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;E-mail:&lt;/strong&gt; &lt;a href=&#34;mailto:herongogo@proton.me&#34;&gt;herongogo@proton.me&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Phone:&lt;/strong&gt; +5588998606125&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;I was born in Brazil in 2002, and I&amp;rsquo;ve been keeping things moving since then. I&amp;rsquo;m a fan of hardware emulation and Linux, especially for retro video-game consoles. I started programming as a teenager, developing game engines at a time when engines weren&amp;rsquo;t as accessible as they are today. Today, I work as a software developer focused on modern Web Backend development with over 3 years of experience.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
