@@ -68,7 +68,7 @@ I wrote the install documentation for contributing with Bun using openSUSE-based
 
 ## Tech Stack
 
-- **Languages:** Go (Golang), Javascript, Typescript, C, Java, SQL  
+- **Languages:** Go (Golang), Javascript, Typescript, C, SQL  
 - **Web:** React, REST API, gRPC  
 - **Systems:** Linux, Unix  
 - **Tools:** Git, Docker, OCI Containers  
