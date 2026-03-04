@@ -23,6 +23,8 @@ This blog is also a way for me to learn in public, document my thoughts, and sha
 
 If you’d like to reach out, feel free to email me at: **herongogo@proton.me**
 
-(Or maybe connect with me on LinkedIn: [Heron X](https://www.linkedin.com/in/heron-x/))
+(Or maybe connect with me on Linkedin: [Heron X](https://www.linkedin.com/in/heron-x/))
+
+You can also check out my **[resume](/resume/)** for more about my experience and tech stack.
 
 ## Posts:
