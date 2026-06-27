@@ -1,8 +1,25 @@
+:root {
+    --bg:        #fdf3e0;
+    --bg-soft:   #f5e8cc;
+    --bg-code:   #ede0c4;
+    --border:    #d4a96a;
+    --text:      #2c1a0e;
+    --text-soft: #6b4226;
+    --accent:    #b85c00;
+    --accent-bg: #e8a030;
+}
+
 body {
     max-width: 800px;
     margin: auto;
     padding: 1em;
-    line-height: 1.5;
+    line-height: 1.7;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a {
+    color: var(--accent);
 }
 
 /* header and footer areas */
@@ -12,41 +29,70 @@ body {
 .menu li {
     display: inline-block;
 }
-.article-meta,
 .menu a {
     text-decoration: none;
-    background: #eee;
-    padding: 5px;
-    border-radius: 0px;
+    background: var(--accent-bg);
+    color: var(--text);
+    padding: 5px 10px;
 }
+.article-meta {
+    background: none;
+}
+.menu a:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
 .menu,
-.article-meta,
 footer {
     text-align: center;
 }
+.article-meta {
+    text-align: left;
+    padding: 1.5em 0 1em;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5em;
+}
+.article-meta h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0 0 0.3em;
+}
+.article-meta h2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text-soft);
+    margin: 0;
+}
 .title {
-    font-size: 1.1em;
+    font-size: 1em;
 }
 footer a {
     text-decoration: none;
 }
 hr {
-    border-style: dashed;
-    color: #ddd;
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2em 0;
+    opacity: 0.6;
 }
 
 /* code */
 pre {
-    border: 1px solid #ddd;
-    box-shadow: 5px 5px 5px #eee;
+    border: 1px solid var(--border);
     padding: 1em;
     overflow-x: auto;
+    background: var(--bg-code);
 }
 code {
-    background: #f9f9f9;
+    background: var(--bg-code);
+    padding: 1px 4px;
+    color: var(--accent);
 }
 pre code {
     background: none;
+    padding: 0;
+    color: inherit;
 }
 
 /* misc elements */
@@ -59,18 +105,19 @@ main {
     hyphens: auto;
 }
 blockquote {
-    background: #f9f9f9;
-    border-left: 5px solid #ccc;
-    padding: 3px 1em 3px;
+    background: var(--bg-soft);
+    border-left: 4px solid var(--accent-bg);
+    padding: 3px 1em;
+    color: var(--text-soft);
 }
 
 table {
     margin: auto;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 table thead th {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border);
 }
 th,
 td {
@@ -79,5 +126,5 @@ td {
 thead,
 tfoot,
 tr:nth-child(even) {
-    background: #eee;
+    background: var(--bg-soft);
 }
