@@ -1,130 +1,63 @@
-:root {
-    --bg:        #fdf3e0;
-    --bg-soft:   #f5e8cc;
-    --bg-code:   #ede0c4;
-    --border:    #d4a96a;
-    --text:      #2c1a0e;
-    --text-soft: #6b4226;
-    --accent:    #b85c00;
-    --accent-bg: #e8a030;
-}
-
 body {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
     padding: 1em;
-    line-height: 1.7;
-    background: var(--bg);
-    color: var(--text);
+    line-height: 1.6;
 }
 
-a {
-    color: var(--accent);
-}
-
-/* header and footer areas */
 .menu {
     padding: 0;
+    list-style: none;
+    text-align: center;
 }
 .menu li {
     display: inline-block;
-}
-.menu a {
-    text-decoration: none;
-    background: var(--accent-bg);
-    color: var(--text);
-    padding: 5px 10px;
-}
-.article-meta {
-    background: none;
-}
-.menu a:hover {
-    background: var(--accent);
-    color: var(--bg);
+    margin: 0 0.5em;
 }
 
-.menu,
-footer {
-    text-align: center;
-}
 .article-meta {
-    text-align: left;
-    padding: 1.5em 0 1em;
-    border-bottom: 1px solid var(--border);
     margin-bottom: 1.5em;
-}
-.article-meta h1 {
-    font-size: 2em;
-    line-height: 1.2;
-    margin: 0 0 0.3em;
 }
 .article-meta h2 {
     font-size: 1em;
-    font-weight: bold;
-    color: var(--text-soft);
+    font-weight: normal;
+    font-style: italic;
     margin: 0;
 }
-.title {
-    font-size: 1em;
-}
-footer a {
-    text-decoration: none;
-}
-hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2em 0;
-    opacity: 0.6;
+
+footer {
+    text-align: center;
+    margin-top: 2em;
 }
 
-/* code */
 pre {
-    border: 1px solid var(--border);
     padding: 1em;
     overflow-x: auto;
-    background: var(--bg-code);
+    border: 1px solid;
 }
 code {
-    background: var(--bg-code);
     padding: 1px 4px;
-    color: var(--accent);
 }
 pre code {
-    background: none;
     padding: 0;
-    color: inherit;
 }
 
-/* misc elements */
 img,
 iframe,
 video {
     max-width: 100%;
 }
+
 main {
     hyphens: auto;
-}
-blockquote {
-    background: var(--bg-soft);
-    border-left: 4px solid var(--accent-bg);
-    padding: 3px 1em;
-    color: var(--text-soft);
 }
 
 table {
     margin: auto;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-table thead th {
-    border-bottom: 1px solid var(--border);
+    border-collapse: collapse;
 }
 th,
 td {
-    padding: 5px;
-}
-thead,
-tfoot,
-tr:nth-child(even) {
-    background: var(--bg-soft);
+    padding: 5px 10px;
+    border: 1px solid;
 }

@@ -7,19 +7,22 @@ title: Resume
 
 - **E-mail:** [herongogo@proton.me](mailto:herongogo@proton.me)  
 - **Phone:** +5588998606125  
+- **Location:** Brazil (Ceará)  
 
 ---
 
 ## About Me
 
-I was born in Brazil in 2002, and I've been keeping things moving since then. I'm a fan of hardware emulation and Linux, especially for retro video-game consoles. I started programming as a teenager, developing game engines at a time when engines weren't as accessible as they are today. Today, I work as a software developer focused on modern Web Backend development with over 3 years of experience.
+I was born in Brazil in 2002 (I'm 24 years old in 2026). Since I was a kid I loved playing games at video rental stores, and at 14 I started programming small games in Java on my laptop with an incredible 2GB of RAM ':). I keep those moments close to my heart. Following that path, I fell in love with technology, and today I work as a software developer, building Web Backend systems. I really enjoy learning new things and meeting new people.
+
+I love the human side behind technology.
 
 ---
 
 ## Last Jobs
 
 ### Somax, Brazil  
-*Fullstack developer · 2025–2026*
+*Backend developer · 2025–2026*
 
 Designed, built, and optimized scalable CDC/ETL pipelines and integration platforms as a unified data layer across multiple ERP systems.
 
@@ -43,7 +46,7 @@ Maintenance and development of microservices using NestJS and TypeScript in a di
 - Integrated caching to improve response times and overall system efficiency.
 - Contributed to scalable backend architectures focused on maintainability and performance.
 
-### Online Telecom ISP, Brazil  
+### Online Telecom ISP, Brazil (Now ZaaZ Telecom Norte/Nordeste)  
 *Fullstack developer · 2024*
 
 - Migrated APIs from NestJS (TypeScript) to Go, improving performance, scalability, and maintainability.
