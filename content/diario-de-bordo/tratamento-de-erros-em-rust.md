@@ -1,6 +1,6 @@
 +++
 title = 'Como Tratamos Erros em Rust'
-date = '2026-09-08T09:00:00-03:00'
+date = '2026-09-06T12:01:08-03:00'
 draft = false
 image = '/images/pikmin-reference.webp'
 +++
