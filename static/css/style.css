@@ -47,9 +47,25 @@ iframe,
 video {
     max-width: 100%;
 }
+main img {
+    display: block;
+    margin: 1.5em auto;
+}
+main blockquote {
+    max-width: 500px;
+    margin: 1.5em auto;
+    text-align: center;
+    font-style: italic;
+}
 
 main {
     hyphens: auto;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid;
+    margin: 2em 0;
 }
 
 table {

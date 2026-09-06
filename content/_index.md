@@ -23,5 +23,3 @@ Here's my resume if you want to know more about my experiences and tech stack:
 **[Resume](/resume/)**
 * 🇧🇷 Português: 
 **[Currículo](/curriculo/)**
-
-## Posts:

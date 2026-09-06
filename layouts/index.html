@@ -2,6 +2,17 @@
 
 {{ .Content }}
 
+<h2 id="diario-de-bordo">Diário de Bordo Rust: <small>(apenas em Português)</small></h2>
+<ul>
+  {{ range (where .Site.RegularPages "Section" "diario-de-bordo") }}
+  <li>
+    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+<h2 id="posts">Posts:</h2>
 <ul>
   {{ range (where .Site.RegularPages "Section" "posts") }}
   <li>

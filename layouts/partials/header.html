@@ -6,6 +6,11 @@
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+    {{ with .Params.image }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {{ end }}
     {{ partial "head_custom.html" . }}
   </head>
 
