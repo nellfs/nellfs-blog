@@ -57,6 +57,18 @@ Manutenção e desenvolvimento de microsserviços usando NestJS e TypeScript em 
 - Desenvolvi ferramentas internas para melhorar a produtividade da equipe e a eficiência operacional.
 - Projetei e modelei bancos de dados PostgreSQL e Redis para suportar novas funcionalidades e garantir acesso a dados de alto desempenho.
 
+### One Panel Cloud, Brasil  
+*Desenvolvedor Fullstack · 2023*
+
+Contribuí no desenvolvimento da One Panel Cloud, uma plataforma de provisionamento de VPS em nuvem, atuando tanto no suporte de infraestrutura quanto no desenvolvimento de novas funcionalidades.
+
+- Apoiei a plataforma durante seu processo inicial de criação e desenvolvimento.
+- Desenvolvi serviços de backend em Go e clientes em TypeScript para a plataforma.
+- Gerenciei máquinas virtuais e infraestrutura de terceiros.
+- Configurei imagens virtualizadas de sistemas operacionais pré-prontas para deployment com Proxmox.
+- Desenvolvi a funcionalidade de criação de novas máquinas na plataforma.
+- Implementei gerenciamento de instalação e configuração automatizada usando Ansible.
+
 ---
 
 ## Contribuições em Código Aberto
